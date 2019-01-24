@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+apply plugin: 'java'
+
+defaultTasks 'checkRunning'
+
+
+task(checkRunning) {
+    println "Gradle build is running!"
+}
+
+dependencies {
+    compile files ('lib/resources.jar')
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+      testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+jar  {
+  manifest {
+     attributes  'Implementation-Title' : 'M2 Gradle Learning' ,
+                'Class-Path': 'lib/resources.jar',
+                 'Implementation-Version' : '1.0',
+                 'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain'
+    }
+
+      destinationDir = file('.')
+      archiveName = 'M2.jar'
+}
+
+
+repositories {
+    files ('lib/resources.jar')
+    mavenCentral()
+}
