@@ -21,12 +21,10 @@ dependencies {
 jar  {
   manifest {
      attributes  'Implementation-Title' : 'M2 Gradle Learning' ,
-                'Class-Path': 'lib/resources.jar',
+                'Class-Path': '../../lib/resources.jar',
                  'Implementation-Version' : '1.0',
                  'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain'
     }
-
-      destinationDir = file('.')
       archiveName = 'M2.jar'
 }
 
