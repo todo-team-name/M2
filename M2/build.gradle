@@ -5,7 +5,7 @@ plugins {
 
 apply plugin: 'java'
 
-defaultTasks 'checkRunning'
+defaultTasks 'jar'
 
 
 task(checkRunning) {
